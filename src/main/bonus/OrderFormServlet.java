@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 
 
 @WebServlet(name = "OrderFormServlet", urlPatterns = "/order-form")
+//2. Create a servlet that returns a simple form if the user navigates to ```/order-form```. In servering up HTML, you may need to include ```response.setHeader("content-type", "text/html");```. The form should include an input for the name of a product and an input for how many of the product they want to order. The method of the form should be ```POST``` and the action should be ```/order-summary```.
+//3. Create a servlet that listens for POST requests to ```/order-summary``` and souts out the name of the product ordered by the user and the quantity.
 public class OrderFormServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         res.setContentType("text/html");
