@@ -10,6 +10,11 @@ public class FirstLastNameServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
+
+        String name = req.getParameter("name");
+        if(name == null){
+            out.println("Hello, Codeup");
+        }
         out.println("<h1> Hello, I am Zihan Zhao <h1>");
     }
 }
