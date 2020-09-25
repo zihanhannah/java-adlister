@@ -5,21 +5,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
-
 @WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello")
-public class HelloWorldServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-       res.setContentType("text/html");
-       PrintWriter out = res.getWriter();
+public class HelloWorldServlet extends HttpServlet{
 
-       String name = req.getParameter("name");
-
-       if (name == null){
-           name = "World";
-       }
-
-       out.println("<h1>Hello, " + name + " !<h1>");
-
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        response.setContentType("text/html");
+        String name = request.getParameter("name");
+        if(name == null){
+            name = "World";
+        }
+        response.getWriter().println("<h1> Hello, " +  name + " !</h1>");
     }
 }
+

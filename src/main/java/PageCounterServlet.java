@@ -6,34 +6,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "PageCounterServlet", urlPatterns = "/count")
-public class PageCounterServlet extends HttpServlet {
+public class PageCounterServlet extends HttpServlet{
+    int count = 0;
+    protected void doGet( HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        private int hitCount = 0;
-
-
-        public void doGet(HttpServletRequest req, HttpServletResponse res)
-                throws  IOException {
-
-            // Set response content type
-            res.setContentType("text/html");
-            String counter = req.getParameter("counter");
-
-            boolean resetCount = req.getParameter("reset")!= null;
-            if(resetCount){
-                hitCount = 0;
-            }
-//            if (counter != null){
-//                hitCount = 0;
-//            }
-            hitCount++;
-            PrintWriter out = res.getWriter();
-
-
-            out.println("<h1>the total view count is " + hitCount + "<h1>");
-
-
-
+        boolean resetCount = request.getParameter("resetCount")!=null;
+        if(resetCount){
+            count = 0;
         }
+        count++;
+        response.getWriter().println("<h1>page was viewed by " + count + " times</h1>");
 
-
+    }
 }

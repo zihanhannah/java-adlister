@@ -7,14 +7,32 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "FirstLastNameServlet", urlPatterns = "/name")
 public class FirstLastNameServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        res.setContentType("text/html");
-        PrintWriter out = res.getWriter();
-
-        String name = req.getParameter("name");
-        if(name == null){
-            out.println("Hello, Codeup");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String name =request.getParameter("name");
+        if(name != null){
+            name = "CodeUp";
+        } else {
+            name = "Zihan Zhao";
         }
-        out.println("<h1> Hello, I am Zihan Zhao <h1>");
+        response.getWriter().println("Hello, " + name);
+
+
+
+
+
+
+
+
+
+
+
+//        res.setContentType("text/html");
+//        PrintWriter out = res.getWriter();
+//
+//        String name = req.getParameter("name");
+//        if(name == null){
+//            out.println("Hello, Codeup");
+//        }
+//        out.println("<h1> Hello, I am Zihan Zhao <h1>");
     }
 }

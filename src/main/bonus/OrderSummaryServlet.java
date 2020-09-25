@@ -14,7 +14,7 @@ public class OrderSummaryServlet extends HttpServlet {
         String product = req.getParameter("ProductName");
         String quantity = req.getParameter("Quantity");
 
-        out.println("the product name is " + product);
+        out.println("the product name is " + product + "<br>");
         out.println("the quantity is " + quantity);
     }
 }
