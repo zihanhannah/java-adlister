@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "PingServlet", urlPatterns = "/ping")
-public class Ping extends HttpServlet {
+public class PingServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
