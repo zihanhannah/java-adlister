@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form method="POST" action="https://request-inspector.glitch.me/">
+    <form method="POST" action="/">
 
         <label for="username">Username</label>
         <input id="username" name="username" type="text">
