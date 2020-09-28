@@ -6,7 +6,7 @@ CREATE TABLE users(
     email VARCHAR(150) NOT NULL,
     password VARCHAR(20) NOT NULL,
     PRIMARY KEY(id)
-)
+);
 
 CREATE TABLE ads(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
